@@ -1,0 +1,221 @@
+/*
+ * Tailwind v4 entry: config lives here, with no tailwind.config.js or PostCSS plugin.
+ * Keep every @import in this top block. Web fonts load via <link> in src/routes/__root.tsx.
+ */
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Barlow", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Barlow Condensed", "Barlow", ui-sans-serif, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-brand-deep: var(--brand-deep);
+  --color-brand-deep-foreground: var(--brand-deep-foreground);
+  --color-brand-bright: var(--brand-bright);
+  --color-on-image: var(--on-image);
+  --color-on-image-muted: var(--on-image-muted);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.125rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.21 0.015 150);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.21 0.015 150);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.21 0.015 150);
+  /* Deep field green */
+  --primary: oklch(0.43 0.115 148);
+  --primary-foreground: oklch(0.99 0 0);
+  /* Light grey surfaces */
+  --secondary: oklch(0.955 0.003 150);
+  --secondary-foreground: oklch(0.21 0.015 150);
+  --muted: oklch(0.955 0.003 150);
+  --muted-foreground: oklch(0.48 0.012 150);
+  --accent: oklch(0.93 0.04 140);
+  --accent-foreground: oklch(0.3 0.09 148);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.89 0.006 150);
+  --input: oklch(0.89 0.006 150);
+  --ring: oklch(0.43 0.115 148);
+
+  --brand-deep: oklch(0.23 0.06 150);
+  --brand-deep-foreground: oklch(0.99 0 0);
+  --brand-bright: oklch(0.68 0.18 135);
+  --on-image: oklch(0.99 0 0);
+  --on-image-muted: oklch(0.99 0 0 / 0.78);
+
+  --gradient-brand: radial-gradient(
+    ellipse at 50% 0%,
+    oklch(0.62 0.17 138) 0%,
+    oklch(0.43 0.115 148) 40%,
+    oklch(0.23 0.06 150) 100%
+  );
+  --gradient-image-overlay: linear-gradient(
+    180deg,
+    oklch(0.18 0.04 150 / 0.15) 0%,
+    oklch(0.18 0.04 150 / 0.35) 45%,
+    oklch(0.16 0.05 150 / 0.88) 100%
+  );
+  --gradient-image-side: linear-gradient(
+    90deg,
+    oklch(0.16 0.05 150 / 0.9) 0%,
+    oklch(0.16 0.05 150 / 0.55) 50%,
+    oklch(0.16 0.05 150 / 0.1) 100%
+  );
+  --shadow-card: 0 18px 40px -24px oklch(0.23 0.06 150 / 0.45);
+
+  --chart-1: oklch(0.43 0.115 148);
+  --chart-2: oklch(0.68 0.18 135);
+  --chart-3: oklch(0.75 0.12 85);
+  --chart-4: oklch(0.55 0.08 60);
+  --chart-5: oklch(0.6 0.05 220);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.21 0.015 150);
+  --sidebar-primary: oklch(0.43 0.115 148);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.955 0.003 150);
+  --sidebar-accent-foreground: oklch(0.21 0.015 150);
+  --sidebar-border: oklch(0.89 0.006 150);
+  --sidebar-ring: oklch(0.43 0.115 148);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+}
+
+@utility bg-gradient-brand {
+  background-image: var(--gradient-brand);
+}
+
+@utility bg-image-overlay {
+  background-image: var(--gradient-image-overlay);
+}
+
+@utility bg-image-side {
+  background-image: var(--gradient-image-side);
+}
+
+@utility shadow-card {
+  box-shadow: var(--shadow-card);
+}
+
+@utility eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+@utility dot-pattern {
+  background-image: radial-gradient(oklch(1 0 0 / 0.08) 1.5px, transparent 1.5px);
+  background-size: 22px 22px;
+}
+
+@keyframes progress-fill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes slow-zoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@utility animate-progress {
+  animation: progress-fill var(--slide-duration, 7s) linear forwards;
+  transform-origin: left;
+}
+
+@utility animate-slow-zoom {
+  animation: slow-zoom 9s ease-out forwards;
+}
+
+@utility animate-rise {
+  animation: rise-in 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
